@@ -7,18 +7,16 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class AbsPageObject<T> {
+    protected WebDriver driver;
+    protected BaseWaiters baseWaiters;
+    protected GuiceScoped guiceScoped;
 
-  protected WebDriver driver;
-  protected BaseWaiters baseWaiters;
-  protected GuiceScoped guiceScoped;
-
-  @Inject
-  public AbsPageObject(GuiceScoped guiceScoped) {
-    this.guiceScoped = guiceScoped;
-    this.driver = guiceScoped.driver;
-    this.baseWaiters = new BaseWaiters(driver);
-
-    PageFactory.initElements(guiceScoped.driver, this);
-  }
+    @Inject
+    public AbsPageObject(GuiceScoped guiceScoped) {
+        this.guiceScoped = guiceScoped;
+        this.driver = guiceScoped.driver;
+        this.baseWaiters = new BaseWaiters(driver);
+        PageFactory.initElements(guiceScoped.driver, this);
+    }
 
 }

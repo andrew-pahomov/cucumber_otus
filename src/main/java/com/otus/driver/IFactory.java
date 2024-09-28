@@ -5,6 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 public interface IFactory {
 
-  WebDriver newDriver() throws BrowserNotSupported;
+    WebDriver newDriver() throws BrowserNotSupported;
 
 }

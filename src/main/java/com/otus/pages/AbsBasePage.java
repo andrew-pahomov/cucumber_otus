@@ -4,31 +4,30 @@ import com.google.inject.Inject;
 import com.otus.annotations.Path;
 import com.otus.pageobject.AbsPageObject;
 import com.otus.support.GuiceScoped;
-import org.openqa.selenium.WebDriver;
+import com.otus.waiters.BaseWaiters;
 
 public abstract class AbsBasePage<T> extends AbsPageObject<T> {
 
-  private String baseUrl = System.getProperty("base.url", "https://otus.ru");
+    protected final BaseWaiters baseWaiters = new BaseWaiters(guiceScoped.driver);
+    private final String baseUrl = System.getProperty("base.url", "https://otus.ru");
 
-  @Inject
-  public AbsBasePage(GuiceScoped guiceScoped) {
-    super(guiceScoped);
-  }
-
-  private String getPagePath() {
-    Class<? extends AbsBasePage> clazz = this.getClass();
-    if(clazz.isAnnotationPresent(Path.class)) {
-      Path path = clazz.getAnnotation(Path.class);
-      return path.value();
+    @Inject
+    public AbsBasePage(GuiceScoped guiceScoped) {
+        super(guiceScoped);
     }
 
-    return "";
-  }
+    private String getPagePath() {
+        Class<? extends AbsBasePage> clazz = this.getClass();
+        if (clazz.isAnnotationPresent(Path.class)) {
+            Path path = clazz.getAnnotation(Path.class);
+            return path.value();
+        }
+        return "";
+    }
 
-  public T open() {
-    driver.get(baseUrl + getPagePath());
-
-    return (T) this;
-  }
+    public T open() {
+        driver.get(baseUrl + getPagePath());
+        return (T) this;
+    }
 
 }

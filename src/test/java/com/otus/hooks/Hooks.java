@@ -9,11 +9,16 @@ public class Hooks {
     @Inject
     private GuiceScoped guiceScoped;
 
-    @After
+    @After()
     public void afterScenario() {
         if (guiceScoped.driver != null) {
             guiceScoped.driver.close();
             guiceScoped.driver.quit();
         }
+    }
+
+    @After("@remove_entity")
+    public void afterScenarioRemoveEntity() {
+        System.out.println("remove_entity");
     }
 }

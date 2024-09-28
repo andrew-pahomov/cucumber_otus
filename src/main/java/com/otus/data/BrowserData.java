@@ -1,16 +1,16 @@
 package com.otus.data;
 
 public enum BrowserData {
-  CHROME("chrome"),
-  OPERA("opera");
+    CHROME("chrome"),
+    FIREFOX("firefox");
 
-  private String name;
+    private final String name;
 
-  BrowserData(String name) {
-    this.name = name;
-  }
+    BrowserData(String name) {
+        this.name = name;
+    }
 
-  public String getName() {
-    return name;
-  }
+    public String getName() {
+        return name;
+    }
 }
