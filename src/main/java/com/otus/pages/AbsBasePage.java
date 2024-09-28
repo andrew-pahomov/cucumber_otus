@@ -4,11 +4,8 @@ import com.google.inject.Inject;
 import com.otus.annotations.Path;
 import com.otus.pageobject.AbsPageObject;
 import com.otus.support.GuiceScoped;
-import com.otus.waiters.BaseWaiters;
 
 public abstract class AbsBasePage<T> extends AbsPageObject<T> {
-
-    protected final BaseWaiters baseWaiters = new BaseWaiters(guiceScoped.driver);
     private final String baseUrl = System.getProperty("base.url", "https://otus.ru");
 
     @Inject
