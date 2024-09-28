@@ -1,4 +1,4 @@
-package com.otus.steps.teachersblock;
+package com.otus.steps.blocks;
 
 import com.google.inject.Inject;
 import com.otus.components.TeacherBlock;
