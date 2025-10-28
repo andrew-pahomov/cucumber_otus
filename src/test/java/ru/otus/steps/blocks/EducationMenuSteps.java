@@ -10,7 +10,7 @@ public class EducationMenuSteps {
     private EducationMenuBlock educationMenuBlock;
 
     @И("^Выбрать категорию (.*)$")
-    public void selectCategory(String text){
+    public void selectCategory(String text) {
         educationMenuBlock.clickCategoryLinkByText(text);
     }
 }

@@ -10,12 +10,12 @@ public class CatalogPageSteps {
     private CatalogPage catalogPage;
 
     @И("^Откроется страница Каталог$")
-    public void catalogPageIsVisible(){
+    public void catalogPageIsVisible() {
         catalogPage.checkPageVisibility();
     }
 
     @И("^Чекбокс номер (\\d+) будет (Отмечен|Не отмечен)$")
-    public void checkCheckBoxInput(int index, String isChecked){
+    public void checkCheckBoxInput(int index, String isChecked) {
         catalogPage.checkCheckBoxInput(index, isChecked.equals("Отмечен"));
     }
 }

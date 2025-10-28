@@ -11,7 +11,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class CatalogPage extends AbsBasePage<CatalogPage>{
+public class CatalogPage extends AbsBasePage<CatalogPage> {
 
     @FindBy(xpath = "//div[text()='Каталог']")
     private WebElement header;
@@ -24,12 +24,12 @@ public class CatalogPage extends AbsBasePage<CatalogPage>{
         super(guiceScoped);
     }
 
-    public CatalogPage checkPageVisibility(){
+    public CatalogPage checkPageVisibility() {
         assertTrue(baseWaiters.waitForCondition(ExpectedConditions.visibilityOf(this.header), 5));
         return this;
     }
 
-    public CatalogPage checkCheckBoxInput(int index, boolean isChecked){
+    public CatalogPage checkCheckBoxInput(int index, boolean isChecked) {
         WebElement checkBoxInput = checkBoxInputs.get(index);
         assertEquals(isChecked, checkBoxInput.isSelected());
         return this;
