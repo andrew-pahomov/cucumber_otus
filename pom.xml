@@ -9,10 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-
-        <webdriver.manager>5.7.0</webdriver.manager>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <browser>chrome</browser>
         <base.url>https://otus.ru</base.url>
     </properties>
@@ -21,12 +19,12 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>${webdriver.manager}</version>
+            <version>5.9.3</version>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <version>4.34.0</version>
         </dependency>
         <dependency>
             <groupId>org.junit</groupId>
@@ -50,7 +48,6 @@
             <artifactId>cucumber-java</artifactId>
             <version>7.2.3</version>
         </dependency>
-
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-guice</artifactId>
