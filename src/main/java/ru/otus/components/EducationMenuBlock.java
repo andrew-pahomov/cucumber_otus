@@ -13,8 +13,8 @@ public class EducationMenuBlock extends AbsComponent<EducationMenuBlock> {
     @FindBy(xpath = "//span[@title='Обучение']")
     private WebElement educationMenuButton;
 
-    @FindBy(xpath = "//p[text()='Все курсы']/following-sibling::div")
-    private WebElement allCoursesElement;
+    @FindBy(xpath = "//p[text()='Направления']")
+    private WebElement directionsElement;
 
     @FindBy(xpath = "//*[contains(text(), 'Посещая наш сайт')]/following-sibling::div//button")
     private WebElement notificationButton;
@@ -28,7 +28,7 @@ public class EducationMenuBlock extends AbsComponent<EducationMenuBlock> {
         baseWaiters.waitForCondition(ExpectedConditions.stalenessOf(notificationButton), 5);
         notificationButton.click();
         actions.moveToElement(educationMenuButton).build().perform();
-        allCoursesElement.findElement(By.xpath(String.format("//a[text()='%s']", text))).click();
+        directionsElement.findElement(By.xpath(String.format("//a[text()='%s']", text))).click();
         return new CatalogPage(guiceScoped);
     }
 
